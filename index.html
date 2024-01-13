@@ -6,163 +6,147 @@
     <title>Typing Animation</title>
     <style>
         @font-face {
-    font-family: 'klamp_205_monobold';
-    src: url('gytwh-bold.woff2') format('woff2'),
-         url('gytwh-bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+            font-family: 'klamp_205_monobold';
+            src: url('gytwh-bold.woff2') format('woff2'),
+                 url('gytwh-bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-}
+        @font-face {
+            font-family: 'klamp_205_monobold_italic';
+            src: url('gytwh-boldoblique.woff2') format('woff2'),
+                 url('gytwh-boldoblique.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
+        @font-face {
+            font-family: 'klamp_205_monoregular';
+            src: url('gytwh-book.woff2') format('woff2'),
+                 url('gytwh-book.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
+        @font-face {
+            font-family: 'klamp_205_monobook_oblique';
+            src: url('gytwh-bookoblique.woff2') format('woff2'),
+                 url('gytwh-bookoblique.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
+        @font-face {
+            font-family: 'klamp_205_monolight';
+            src: url('gytwh-light.woff2') format('woff2'),
+                 url('gytwh-light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-@font-face {
-    font-family: 'klamp_205_monobold_italic';
-    src: url('gytwh-boldoblique.woff2') format('woff2'),
-         url('gytwh-boldoblique.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+        @font-face {
+            font-family: 'klamp_205_monolight_oblique';
+            src: url('gytwh-lightoblique.woff2') format('woff2'),
+                 url('gytwh-lightoblique.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-}
+        @font-face {
+            font-family: 'klamp_205_monomedium';
+            src: url('gytwh-medium.woff2') format('woff2'),
+                 url('gytwh-medium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
+        @font-face {
+            font-family: 'klamp_205_monomedium_oblique';
+            src: url('gytwh-mediumoblique.woff2') format('woff2'),
+                 url('gytwh-mediumoblique.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-
-
-@font-face {
-    font-family: 'klamp_205_monoregular';
-    src: url('gytwh-book.woff2') format('woff2'),
-         url('gytwh-book.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'klamp_205_monobook_oblique';
-    src: url('gytwh-bookoblique.woff2') format('woff2'),
-         url('gytwh-bookoblique.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'klamp_205_monolight';
-    src: url('gytwh-light.woff2') format('woff2'),
-         url('gytwh-light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'klamp_205_monolight_oblique';
-    src: url('gytwh-lightoblique.woff2') format('woff2'),
-         url('gytwh-lightoblique.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'klamp_205_monomedium';
-    src: url('gytwh-medium.woff2') format('woff2'),
-         url('gytwh-medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'klamp_205_monomedium_oblique';
-    src: url('gytwh-mediumoblique.woff2') format('woff2'),
-         url('gytwh-mediumoblique.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
         .container {
             font-family: 'klamp_205_monolight', Arial, sans-serif; /* Custom font for static text */
             font-size: 20px;
         }
+
         .text-static {
             color: black;
         }
+
         .text-dynamic {
             font-family: 'klamp_205_monomedium', Arial, sans-serif; /* Custom font for dynamic text */
             color: red;
             display: inline;
         }
+
         .full-stop {
+            color: black;
+        }
+
+        /* Style for "William Huon" */
+        .name {
+            font-family: 'klamp_205_monomedium', Arial, sans-serif;
             color: black;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Added line for "William Huon" -->
+        <span class="name">My name is William Huon.</span><br>
         <span class="text-static">I specialise in </span>
-        <span class="text-dynamic" id="dynamicText"></span><span class="full-stop">.</span>
-    </div>
+        <span class="text-dynamic" id="dynamicText"></span><span class="full
+-stop">.</span>
+</div>
 
     <script>
-        const phrases = [
-            "Mechanical Engineering", 
-            "Lighting", 
-            "Design to Manufacture",
-            "R&D", 
-            "Product Development", 
-            "CAD", 
-            "Solidworks",
-            "Product Design"
-        ];
+    const phrases = [
+        "Mechanical Engineering", 
+        "Lighting", 
+        "Design to Manufacture",
+        "R&D", 
+        "Product Development", 
+        "CAD", 
+        "Solidworks",
+        "Product Design"
+    ];
 
-        let currentPhrase = 0;
-        let currentLetter = 0;
-        let isDeleting = false;
-        const typingSpeed = 150;
-        const deleteSpeed = 100;
-        const dynamicText = document.getElementById('dynamicText');
+    let currentPhrase = 0;
+    let currentLetter = 0;
+    let isDeleting = false;
+    const typingSpeed = 150;
+    const deleteSpeed = 100;
+    const dynamicText = document.getElementById('dynamicText');
 
-        function type() {
-            const fullPhrase = phrases[currentPhrase];
-            if (isDeleting) {
-                currentLetter--;
-            } else {
-                currentLetter++;
-            }
-
-            dynamicText.textContent = fullPhrase.substring(0, currentLetter);
-
-            let currentSpeed = isDeleting ? deleteSpeed : typingSpeed;
-
-            if (!isDeleting && currentLetter === fullPhrase.length) {
-                currentSpeed = 2000; // Pause at end
-                isDeleting = true;
-            } else if (isDeleting && currentLetter === 0) {
-                currentPhrase = (currentPhrase + 1) % phrases.length;
-                isDeleting = false;
-            }
-
-            setTimeout(type, currentSpeed);
+    function type() {
+        const fullPhrase = phrases[currentPhrase];
+        if (isDeleting) {
+            currentLetter--;
+        } else {
+            currentLetter++;
         }
 
-        type();
-    </script>
+        dynamicText.textContent = fullPhrase.substring(0, currentLetter);
+
+        let currentSpeed = isDeleting ? deleteSpeed : typingSpeed;
+
+        if (!isDeleting && currentLetter === fullPhrase.length) {
+            currentSpeed = 2000; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && currentLetter === 0) {
+            currentPhrase = (currentPhrase + 1) % phrases.length;
+            isDeleting = false;
+        }
+
+        setTimeout(type, currentSpeed);
+    }
+
+    type();
+</script>
 </body>
 </html>
