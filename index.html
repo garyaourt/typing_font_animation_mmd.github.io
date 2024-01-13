@@ -70,7 +70,7 @@
         }
 
         .container {
-            font-family: 'klamp_205_monolight', Arial, sans-serif; /* Custom font for static text */
+            font-family: 'klamp_205_monolight', Arial, sans-serif;
             font-size: 20px;
         }
 
@@ -79,7 +79,7 @@
         }
 
         .text-dynamic {
-            font-family: 'klamp_205_monomedium', Arial, sans-serif; /* Custom font for dynamic text */
+            font-family: 'klamp_205_monomedium', Arial, sans-serif;
             color: red;
             display: inline;
         }
@@ -88,7 +88,11 @@
             color: black;
         }
 
-        /* Style for "William Huon" */
+        .intro {
+            font-family: 'klamp_205_monolight', Arial, sans-serif;
+            color: black;
+        }
+
         .name {
             font-family: 'klamp_205_monomedium', Arial, sans-serif;
             color: black;
@@ -97,14 +101,13 @@
 </head>
 <body>
     <div class="container">
-        <!-- Added line for "William Huon" -->
-        <span class="name">My name is William Huon.</span><br>
-        <span class="text-static">I specialise in </span>
-        <span class="text-dynamic" id="dynamicText"></span><span class="full
--stop">.</span>
+        <!-- Updated line for "My name is" and "William Huon" -->
+        <span class="intro">My name is </span><span class="name">William Huon.</span><br>
+    <span class="text-static">I specialise in </span>
+    <span class="text-dynamic" id="dynamicText"></span><span class="full-stop">.</span>
 </div>
 
-    <script>
+<script>
     const phrases = [
         "Mechanical Engineering", 
         "Lighting", 
