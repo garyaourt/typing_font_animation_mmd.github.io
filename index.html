@@ -85,6 +85,19 @@
             font-size: 25px;
         }
 
+        .cursor {
+            color: black;
+            display: inline;
+            font-family: 'klamp_205_monomedium', Arial, sans-serif;
+            font-size: 25px;
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         .full-stop {
             color: black;
         }
@@ -104,55 +117,54 @@
 </head>
 <body>
     <div class="container">
-        <!-- Updated line for "My name is" and "William Huon" -->
         <span class="intro">we are </span><span class="name">millimetric.design</span><span class="full-stop"></span><br><br>
-    <span class="text-static">we specialise in </span>
-    <span class="text-dynamic" id="dynamicText"></span><span class="full-stop">.</span>
-</div>
+        <span class="text-static">we specialise in </span>
+        <span class="text-dynamic" id="dynamicText"></span><span class="cursor">_</span>
+    </div>
 
-<script>
-    const phrases = [
-        "design",
-        "engineering",
-        "lighting", 
-        "design to manufacture",
-        "R&D", 
-        "product development", 
-        "CAD", 
-        "product design"
-    ];
+    <script>
+        const phrases = [
+            "design",
+            "engineering",
+            "lighting", 
+            "design to manufacture",
+            "R&D", 
+            "product development", 
+            "CAD", 
+            "product design"
+        ];
 
-    let currentPhrase = 0;
-    let currentLetter = 0;
-    let isDeleting = false;
-    const typingSpeed = 150;
-    const deleteSpeed = 100;
-    const dynamicText = document.getElementById('dynamicText');
+        let currentPhrase = 0;
+        let currentLetter = 0;
+        let isDeleting = false;
+        const typingSpeed = 150;
+        const deleteSpeed = 100;
+        const dynamicText = document.getElementById('dynamicText');
 
-    function type() {
-        const fullPhrase = phrases[currentPhrase];
-        if (isDeleting) {
-            currentLetter--;
-        } else {
-            currentLetter++;
+        function type() {
+            const fullPhrase = phrases[currentPhrase];
+            if (isDeleting) {
+                currentLetter--;
+            } else {
+                currentLetter++;
+            }
+
+            dynamicText.textContent = fullPhrase.substring(0, currentLetter);
+
+            let currentSpeed = isDeleting ? deleteSpeed : typingSpeed;
+
+            if (!isDeleting && currentLetter === fullPhrase.length) {
+                currentSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && currentLetter === 0) {
+                currentPhrase = (currentPhrase + 1) % phrases.length;
+                isDeleting = false;
+            }
+
+            setTimeout(type, currentSpeed);
         }
 
-        dynamicText.textContent = fullPhrase.substring(0, currentLetter);
-
-        let currentSpeed = isDeleting ? deleteSpeed : typingSpeed;
-
-        if (!isDeleting && currentLetter === fullPhrase.length) {
-            currentSpeed = 2000; // Pause at end
-            isDeleting = true;
-        } else if (isDeleting && currentLetter === 0) {
-            currentPhrase = (currentPhrase + 1) % phrases.length;
-            isDeleting = false;
-        }
-
-        setTimeout(type, currentSpeed);
-    }
-
-    type();
-</script>
+        type();
+    </script>
 </body>
 </html>
